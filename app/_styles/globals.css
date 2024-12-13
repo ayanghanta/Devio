@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .spinner {
+    @apply w-12 aspect-square rounded-full;
+    background: radial-gradient(
+          farthest-side,
+          theme("colors.gray.800") 94%,
+          transparent
+        )
+        top/8px 8px no-repeat,
+      conic-gradient(transparent 30%, theme("colors.gray.800"));
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - 8px),
+      black 0
+    );
+    mask: radial-gradient(farthest-side, transparent calc(100% - 8px), black 0);
+    animation: spin 1s infinite linear;
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+  .loader {
+    height: 12px;
+    margin: 96px auto;
+    width: 50%;
+    /* width: 130px; */
+    --c: no-repeat linear-gradient(#29292b 0 0);
+    background: var(--c), var(--c), #b3b3b4;
+    background-size: 60% 100%;
+    animation: l16 3s infinite;
+  }
+  @keyframes l16 {
+    0% {
+      background-position: -150% 0, -150% 0;
+    }
+    66% {
+      background-position: 250% 0, -150% 0;
+    }
+    100% {
+      background-position: 250% 0, 250% 0;
+    }
+  }
+}
