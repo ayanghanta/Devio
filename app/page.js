@@ -19,7 +19,7 @@ async function page() {
 
   return (
     <div className="max-w-7xl mx-auto">
-      {/* <Hero /> */}
+      <Hero />
       <HomeBlogs latestBlogs={latestBlogs} mostLikedBlogs={mostLikedBlogs} />
     </div>
   );
