@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 
-import { getPublishedBlogs } from "@/app/_lib/apiBlog";
 import { barlow } from "@/app/layout";
 import Spinner from "../ui/Spinner";
 import SquarBlogCard from "./SquareBlogCard";
@@ -8,12 +7,7 @@ import WideBlogCard from "./WideBlogCard";
 
 export const revalidate = 3600;
 
-async function HomeBlogs() {
-  const [latestBlogs, mostLikedBlogs] = await Promise.all([
-    getPublishedBlogs("latest-blog"),
-    getPublishedBlogs("most-4-liked"),
-  ]);
-  const top2MostRead = mostLikedBlogs.slice(0, 2);
+async function HomeBlogs({ latestBlogs, mostLikedBlogs }) {
   return (
     <div className="mx-auto max-w-4xl px-3">
       <div>
@@ -35,7 +29,7 @@ async function HomeBlogs() {
 
         <Suspense fallback={<Spinner />}>
           <div className="grid grid-cols-1 gap-x-4 gap-y-5 sm:grid-cols-2">
-            {top2MostRead.map((blog) => (
+            {mostLikedBlogs.map((blog) => (
               <SquarBlogCard key={blog._id} blog={blog} />
             ))}
           </div>

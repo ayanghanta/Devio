@@ -3,7 +3,7 @@ import SmallBlogCard from "../_components/blog/SmallBlogCard";
 import SquarBlogCard from "../_components/blog/SquareBlogCard";
 import WideBlogCard from "../_components/blog/WideBlogCard";
 import Spinner from "../_components/ui/Spinner";
-import { getPublishedBlogs } from "../_lib/apiBlog";
+import { getAllBlogs, getLatestBlog, getMostLiedBlogs } from "../_lib/apiBlog";
 
 import { barlow } from "../layout";
 
@@ -14,10 +14,10 @@ export const metadata = {
 export const revalidate = 3600;
 
 async function page() {
-  const [allBlogs, latestBlogs, mostLikedBlogs] = await Promise.all([
-    getPublishedBlogs(),
-    getPublishedBlogs("latest-blog"),
-    getPublishedBlogs("most-4-liked"),
+  const [latestBlogs, mostLikedBlogs, allBlogs] = await Promise.all([
+    getLatestBlog(),
+    getMostLiedBlogs(2),
+    getAllBlogs(),
   ]);
 
   return (

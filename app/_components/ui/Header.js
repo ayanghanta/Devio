@@ -2,8 +2,10 @@ import Link from "next/link";
 import Logo from "./Logo";
 
 import { barlow } from "@/app/layout";
+import Button from "./buttons/Button";
 
-function Header() {
+async function Header() {
+  // console.log(session);
   return (
     <header className={`${barlow.className}`}>
       <nav className="flex items-center justify-between p-3 font-header max-w-7xl mx-auto">
@@ -17,7 +19,15 @@ function Header() {
             <Link href="/blogs">Blogs</Link>
           </li>
         </ul>
-        <div></div>
+        {/*  */}
+
+        {/* <div className="space-x-3">
+          <Link href="/admin/dashboard">DashBoard</Link>
+          <Link href="/login">
+            <Button type="primary">Login</Button>
+          </Link>
+        </div> */}
+        <div className="hidden sm:mr-12 sm:block md:mr-24"></div>
       </nav>
     </header>
   );
