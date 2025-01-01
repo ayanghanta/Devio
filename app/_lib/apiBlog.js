@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-const BASE_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/blogs`;
+const BASE_URL = `${""}/api/blogs`;
 
 export async function getMostLiedBlogs(quantity = 4) {
   const res = await fetch(`${BASE_URL}?limit=${quantity}&sort=-likes`);
