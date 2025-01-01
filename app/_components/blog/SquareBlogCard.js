@@ -10,7 +10,7 @@ function SquarBlogCard({ blog = {} }) {
   return (
     <div className="rounded border border-gray-200 bg-gray-50 p-3 transition duration-300 hover:shadow-md">
       <Image
-        src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${blogCoverImage}`}
+        src={`/blogs/${blogCoverImage}`}
         alt={title || "Blog Cover"}
         width={5184}
         height={2916}

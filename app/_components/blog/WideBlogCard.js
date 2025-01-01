@@ -10,7 +10,7 @@ function WideBlogCard({ blog = {} }) {
   return (
     <div className="mb-12 items-start rounded border border-gray-400 p-3 transition duration-300 hover:shadow-md sm:flex sm:gap-6">
       <Image
-        src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${blogCoverImage}`}
+        src={`/blogs/${blogCoverImage}`}
         alt={title || "Blog Cover"}
         width={5184}
         height={2916}

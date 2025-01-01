@@ -23,7 +23,7 @@ function DisplayBlogPost({ blog }) {
 
       <Image
         className="mx-auto mb-12 max-w-[90%] rounded-sm"
-        src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${blogCoverImage}`}
+        src={`/blogs/${blogCoverImage}`}
         alt={title || "Blog Cover"}
         width={5184}
         height={2916}
