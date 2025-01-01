@@ -3,8 +3,10 @@ import SmallBlogCard from "../_components/blog/SmallBlogCard";
 import SquarBlogCard from "../_components/blog/SquareBlogCard";
 import WideBlogCard from "../_components/blog/WideBlogCard";
 import Spinner from "../_components/ui/Spinner";
-import { getAllBlogs, getLatestBlog, getMostLiedBlogs } from "../_lib/apiBlog";
 
+import { dbConnect } from "@/db/db";
+import Blog from "@/db/model/blogModel";
+import ApiFeatures from "../_lib/apiFeature";
 import { barlow } from "../layout";
 
 export const metadata = {
@@ -14,10 +16,38 @@ export const metadata = {
 export const revalidate = 3600;
 
 async function page() {
+  await dbConnect();
+
+  const mostLikeBlogsFeature = new ApiFeatures(
+    Blog.find({ isPublished: true }),
+    {
+      limit: 4,
+      sort: "-likes",
+    }
+  )
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
+
+  const latestBlogsFeature = new ApiFeatures(Blog.find({ isPublished: true }), {
+    limit: 1,
+  })
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
+
+  const allBlogFeature = new ApiFeatures(Blog.find({ isPublished: true }), {})
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
+
   const [latestBlogs, mostLikedBlogs, allBlogs] = await Promise.all([
-    getLatestBlog(),
-    getMostLiedBlogs(2),
-    getAllBlogs(),
+    latestBlogsFeature.query,
+    mostLikeBlogsFeature.query,
+    allBlogFeature.query,
   ]);
 
   return (

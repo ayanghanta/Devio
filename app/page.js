@@ -1,20 +1,36 @@
-import Hero from "@/app/_components/ui/Hero";
 import HomeBlogs from "@/app/_components/blog/HomeBlogs";
+import Hero from "@/app/_components/ui/Hero";
 
 import { dbConnect } from "@/db/db";
 import Blog from "@/db/model/blogModel";
-import { getLatestBlog, getMostLiedBlogs } from "./_lib/apiBlog";
+import ApiFeatures from "./_lib/apiFeature";
 
 async function page() {
-  // // req.query.limit = "4";
-  // // req.query.sort = "-likes";
-  // // req.query.fields = "title,blogCoverImage,publishedAt,description,likes,slug";
-  // const top2MostLiked = await fetch("/api/blogs");
-  // const letestBlogs = await fetch("/api/blogs?limit=1");
+  await dbConnect();
+
+  const mostLikeBlogsFeature = new ApiFeatures(
+    Blog.find({ isPublished: true }),
+    {
+      limit: 2,
+      sort: "-likes",
+    }
+  )
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
+
+  const latestBlogsFeature = new ApiFeatures(Blog.find({ isPublished: true }), {
+    limit: 1,
+  })
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
 
   const [latestBlogs, mostLikedBlogs] = await Promise.all([
-    getLatestBlog(),
-    getMostLiedBlogs(2),
+    latestBlogsFeature.query,
+    mostLikeBlogsFeature.query,
   ]);
 
   return (
