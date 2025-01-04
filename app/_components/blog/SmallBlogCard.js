@@ -6,7 +6,7 @@ import { barlow } from "@/app/layout";
 function SmallBlogCard({ blog }) {
   const { title, blogCoverImage, _id: id } = blog;
   return (
-    <div className="relative flex gap-3 rounded border border-gray-200 bg-gray-50 p-3 transition duration-300 hover:shadow-md sm:flex-row">
+    <div className="relative flex flex-col gap-3 rounded border border-gray-200 bg-gray-50 p-3 transition duration-300 hover:shadow-md sm:flex-row">
       <Image
         src={`/blogs/${blogCoverImage}`}
         alt={title || "Blog Cover"}
