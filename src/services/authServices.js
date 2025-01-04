@@ -1,5 +1,5 @@
-// const BASE_URL = `http://localhost:3000/api/v1/users`;
-const BASE_URL = `https://devio-rail.up.railway.app/api/v1/users`;
+// const BASE_URL = `http://localhost:8000/api/v1/users`;
+const BASE_URL = `https://devio-backend-rzqx.onrender.com/api/v1/users`;
 
 export async function singup({ name, email, password, confirmPassword }) {
   try {

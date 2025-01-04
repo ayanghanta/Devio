@@ -1,5 +1,5 @@
-// const BASE_URL = `http://localhost:3000/api/v1/blogs`;
-const BASE_URL = `https://devio-rail.up.railway.app/api/v1/blogs`;
+// const BASE_URL = `http://localhost:8000/api/v1/blogs`;
+const BASE_URL = `https://devio-backend-rzqx.onrender.com/api/v1/blogs`;
 
 export async function getPublishedBlogs(aliasUrl = '') {
   let reqUrl = BASE_URL;
@@ -18,7 +18,10 @@ export async function getPublishedBlogs(aliasUrl = '') {
 
 export async function getBlog(id) {
   try {
-    const res = await fetch(`${BASE_URL}/${id}`);
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      method: 'GET',
+      credentials: 'include',
+    });
     const data = await res.json();
     if (!data.ok) throw new Error('Somthing went wrong in getting blog!');
 
