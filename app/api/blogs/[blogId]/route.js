@@ -2,6 +2,7 @@ import { dbConnect } from "@/db/db";
 import Blog from "@/db/model/blogModel";
 
 export async function GET(req, { params }) {
+  // ceheck repo configure
   const { blogId } = params;
   try {
     await dbConnect();
