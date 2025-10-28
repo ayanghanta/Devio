@@ -1,4 +1,3 @@
-"use client";
 export const modifyHtml = (html) => {
   // Add Tailwind CSS classes to elements
   return html

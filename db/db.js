@@ -18,11 +18,7 @@ export async function dbConnect() {
       return global.mongoose.conn;
     }
 
-    const connPromise = mongoose.connect(DB_CONNECTION, {
-      autoIndex: true,
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const connPromise = mongoose.connect(DB_CONNECTION, { autoIndex: true });
 
     global.mongoose = {
       conn: await connPromise,

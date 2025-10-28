@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import slugify from "slugify";
 
 const blogSchema = new mongoose.Schema({
   title: {
@@ -47,6 +48,8 @@ const blogSchema = new mongoose.Schema({
   },
   slug: {
     type: String,
+    unique: true,
+    lowercase: true,
   },
   likes: {
     type: Number,
@@ -60,6 +63,19 @@ const blogSchema = new mongoose.Schema({
     type: String,
     default: "5",
   },
+});
+
+blogSchema.pre("save", function (next) {
+  // if (this.isModified("title") || this.isNew || true) {
+  this.slug = slugify(this.title, {
+    replacement: "-",
+    lowercase: true,
+    trim: true,
+    strict: true,
+  });
+  // }
+
+  next();
 });
 
 // Use the cached model or define it if it doesn't exist

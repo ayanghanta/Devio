@@ -5,7 +5,7 @@ import Image from "next/image";
 import { barlow } from "@/app/layout";
 
 function SquarBlogCard({ blog = {} }) {
-  const { title, description, blogCoverImage, publishedAt, _id: id } = blog;
+  const { title, description, blogCoverImage, publishedAt, slug } = blog;
 
   return (
     <div className="rounded border border-gray-200 bg-gray-50 p-3 transition duration-300 hover:shadow-md">
@@ -19,7 +19,7 @@ function SquarBlogCard({ blog = {} }) {
       <div>
         <Link
           className={`${barlow.className} mb-3 block text-lg text-gray-600 transition duration-200 hover:underline sm:mt-2 sm:text-2xl`}
-          href={`/blogs/${id}`}
+          href={`/blog/${slug}`}
         >
           {title}
         </Link>
@@ -32,7 +32,7 @@ function SquarBlogCard({ blog = {} }) {
         <div className="text-right">
           <Link
             className="ml-auto w-5 cursor-pointer sm:text-2xl"
-            href={`/blogs/${id}`}
+            href={`/blog/${slug}`}
           >
             &rarr;
           </Link>

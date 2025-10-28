@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 function WideBlogCard({ blog = {} }) {
-  const { title, description, blogCoverImage, publishedAt, _id: id } = blog;
+  const { title, description, blogCoverImage, publishedAt, slug } = blog;
   return (
     <div className="mb-12 items-start rounded border border-gray-400 p-3 transition duration-300 hover:shadow-md sm:flex sm:gap-6">
       <Image
@@ -19,7 +19,7 @@ function WideBlogCard({ blog = {} }) {
 
       <div>
         <Link
-          href={`/blogs/${id}`}
+          href={`/blog/${slug}`}
           className={`${barlow.className} mb-3 block text-lg font-medium text-gray-900 transition duration-200 hover:underline sm:text-2xl`}
         >
           {title}
@@ -31,7 +31,7 @@ function WideBlogCard({ blog = {} }) {
           <CollapsText wordShown={25}>{description}</CollapsText>
         </p>
         <Link
-          href={`/blogs/${id}`}
+          href={`/blog/${slug}`}
           className="ml-auto mr-2 block w-5 sm:text-2xl"
         >
           &rarr;

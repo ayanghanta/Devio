@@ -5,6 +5,14 @@ import { dbConnect } from "@/db/db";
 import Blog from "@/db/model/blogModel";
 import ApiFeatures from "./_lib/apiFeature";
 
+export const revalidate = 3600;
+
+export const metadata = {
+  title: "Devio",
+  description:
+    "Hey, I’m ayan sharing my coding journey on this website, new tech I learn, projects I build, and lessons I pick up along the way.",
+};
+
 async function page() {
   await dbConnect();
 
