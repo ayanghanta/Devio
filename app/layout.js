@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         <BlogContextProvider>
           <main className="flex-1 px-0">{children}</main>
           <Toaster
-            position="top-right"
+            position="top-center"
             gutter={12}
             containerStyle={{ margin: "8px" }}
             toastOptions={{

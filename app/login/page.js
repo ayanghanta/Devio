@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { signInAction } from "../_lib/actions";
 import LoginForm from "../_components/ui/LoginForm";
 function page() {
   return (
@@ -10,7 +9,7 @@ function page() {
       <div>
         <div className="mx-auto flex w-3/4 flex-col gap-6">
           <LoginForm />
-          <form action={signInAction}>
+          <form>
             <button className="flex gap-3 bg-gray-100 px-6 py-3 rounded-md justify-center hover:bg-gray-200 transition duration-300 w-full">
               <p>Sign in with Google</p>
               <img

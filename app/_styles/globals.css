@@ -47,4 +47,25 @@
       background-position: 250% 0, 250% 0;
     }
   }
+
+  .buttonLoader {
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 4px solid rgb(242, 243, 243);
+    border-right-color: #f59e0b;
+    animation: l2 1s infinite linear;
+  }
+  @keyframes l2 {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  .tiptap p.is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
 }

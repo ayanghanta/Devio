@@ -1,15 +1,23 @@
 "use client";
 import { useState } from "react";
 import Button from "./buttons/Button";
-import { signInCredentials } from "@/app/_lib/actions";
+import { signInAction } from "@/lib/actions/authAction";
+import toast from "react-hot-toast";
+import ButtonLoader from "./ButtonLoader";
 
 function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("hello@gamil.com");
+  const [password, setPassword] = useState("test12345688");
+  const [isLoading, setIsLoading] = useState(false);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
+    setIsLoading(true);
     e.preventDefault();
-    signInCredentials({ email, password });
+    const res = await signInAction({ email, password });
+    console.log(res);
+    setIsLoading(false);
+    // if (res.success === false) toast.error(res.message);
+    if (!res.success) toast.error(res.message);
   }
   return (
     <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
@@ -35,8 +43,8 @@ function LoginForm() {
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <Button role="submit" type="primary">
-        Login
+      <Button role="submit" type="primary" disabled={isLoading}>
+        {isLoading ? <ButtonLoader /> : "Login"}
       </Button>
     </form>
   );

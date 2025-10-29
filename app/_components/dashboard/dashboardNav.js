@@ -4,7 +4,7 @@ import Logout from "../ui/Logout";
 
 function DashBorardNav() {
   return (
-    <div className="mb-6 flex items-center justify-center gap-x-4">
+    <div className="my-6 flex items-center justify-center gap-x-4">
       <Logout />
       <Link
         href="/admin/config"

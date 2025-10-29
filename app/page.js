@@ -3,7 +3,7 @@ import Hero from "@/app/_components/ui/Hero";
 
 import { dbConnect } from "@/db/db";
 import Blog from "@/db/model/blogModel";
-import ApiFeatures from "./_lib/apiFeature";
+import ApiFeatures from "@/lib/apiFeature";
 
 export const revalidate = 3600;
 
