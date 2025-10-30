@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tiptap/extension-code-block": "^3.9.1",
+    "@aws-sdk/client-s3": "^3.920.0",
     "@tiptap/extension-code-block-lowlight": "^3.9.1",
     "@tiptap/extension-file-handler": "^3.9.0",
     "@tiptap/extension-heading": "^3.9.0",

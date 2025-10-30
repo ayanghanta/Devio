@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { barlow } from "@/app/layout";
+import { barlow } from "@/lib/font";
 
 function SmallBlogCard({ blog }) {
   const { title, blogCoverImage, slug } = blog;

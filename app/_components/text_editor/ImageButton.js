@@ -1,23 +1,33 @@
 import { useCallback } from "react";
 import ToolButton from "./ToolButton";
 import { PiImage } from "react-icons/pi";
+import Modal from "../ui/Modal";
+import ImageSelector from "../ui/ImageSelector";
 
 function ImageButton({ editor }) {
-  const addImage = useCallback(() => {
-    const url = window.prompt("URL");
-
-    if (url) {
-      editor.chain().focus().setImage({ src: url }).run();
-    }
-  }, [editor]);
+  const addImage = useCallback(
+    (url) => {
+      if (url) {
+        editor.chain().focus().setImage({ src: url }).run();
+      }
+    },
+    [editor]
+  );
 
   if (!editor) {
     return null;
   }
   return (
-    <ToolButton onClick={addImage}>
-      <PiImage className="text-base xs:text-lg sm:text-xl" />
-    </ToolButton>
+    <Modal>
+      <Modal.Open name="blogImage">
+        <ToolButton>
+          <PiImage className="text-base xs:text-lg sm:text-xl" />
+        </ToolButton>
+      </Modal.Open>
+      <Modal.Window windowName="blogImage">
+        <ImageSelector setBlogImageUrl={addImage} />
+      </Modal.Window>
+    </Modal>
   );
 }
 

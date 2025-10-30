@@ -1,7 +1,6 @@
 import Footer from "@/app/_components/ui/Footer";
 import "@/app/_styles/globals.css";
 import { Rubik } from "next/font/google";
-import { Barlow } from "next/font/google";
 import Header from "@/app/_components/ui/Header";
 import { BlogContextProvider } from "./_context/BlogContext";
 import { Toaster } from "react-hot-toast";
@@ -9,11 +8,6 @@ import { Toaster } from "react-hot-toast";
 const rubic = Rubik({
   subsets: ["latin"],
   display: "swap",
-});
-export const barlow = Barlow({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["500", "600", "700", "800"],
 });
 
 export const metadata = {

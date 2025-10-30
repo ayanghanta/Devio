@@ -110,7 +110,6 @@
   color: #475569;
   margin: 1.25rem 0;
   background-color: #f8fafc; /* slate-50 */
-  border-radius: 0.375rem;
 }
 
 /* ------------------------------
@@ -160,7 +159,6 @@
 .editor-content img {
   max-width: 100%;
   height: auto;
-  border-radius: 0.5rem;
   margin: 1rem 0;
   display: block;
 }

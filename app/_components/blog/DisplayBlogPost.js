@@ -1,7 +1,8 @@
 import Image from "next/image";
 import AuthorInfo from "../ui/AuthorInfo";
 import BlogContentDisplay from "./BlogContentDisplay";
-import { barlow } from "@/app/layout";
+import { barlow } from "@/lib/font";
+import { BLOG_COVER_HEIGHT, BLOG_COVER_WIDTH } from "@/app/_utils/constants";
 
 function DisplayBlogPost({ blog }) {
   const {
@@ -19,14 +20,14 @@ function DisplayBlogPost({ blog }) {
       >
         {title}
       </h1>
-      <AuthorInfo blogPublishDate={publishedAt} />
+      <AuthorInfo blogPublishDate={publishedAt || new Date()} />
 
       <Image
         className="mx-auto mb-12 max-w-[90%] rounded-sm"
         src={`/blogs/${blogCoverImage}`}
         alt={title || "Blog Cover"}
-        width={5184}
-        height={2916}
+        width={BLOG_COVER_WIDTH}
+        height={BLOG_COVER_HEIGHT}
       />
       <p className="mb-12 text-sm italic text-gray-500 sm:text-base">
         {description}

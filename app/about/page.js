@@ -1,4 +1,4 @@
-import { barlow } from "@/app/layout";
+import { barlow } from "@/lib/font";
 import Image from "next/image";
 export const metadata = {
   title: "About me",

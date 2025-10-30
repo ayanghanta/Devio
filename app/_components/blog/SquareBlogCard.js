@@ -2,7 +2,7 @@ import Link from "next/link";
 import CollapsText from "@/app/_utils/CollapsText";
 import { formatDate } from "@/app/_utils/formatDate";
 import Image from "next/image";
-import { barlow } from "@/app/layout";
+import { barlow } from "@/lib/font";
 
 function SquarBlogCard({ blog = {} }) {
   const { title, description, blogCoverImage, publishedAt, slug } = blog;

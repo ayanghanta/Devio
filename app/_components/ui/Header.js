@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 
-import { barlow } from "@/app/layout";
+import { barlow } from "@/lib/font";
 import Button from "./buttons/Button";
 
 async function Header() {

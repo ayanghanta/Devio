@@ -30,7 +30,7 @@ function Window({ children, windowName }) {
 
   return createPortal(
     <>
-      <div className="fixed left-0 top-0 h-dvh w-full bg-slate-200/20 backdrop-blur-sm"></div>
+      <div className="fixed left-0 top-0 h-dvh w-full bg-slate-700/40"></div>
 
       <div className="fixed left-2/4 top-2/4 w-[600px] -translate-x-2/4 -translate-y-2/4 rounded-sm bg-slate-50 px-12 py-8 text-gray-800 shadow shadow-slate-200">
         <button onClick={close}>

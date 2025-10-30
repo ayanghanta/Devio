@@ -1,4 +1,4 @@
-import { barlow } from "@/app/layout";
+import { barlow } from "@/lib/font";
 import SquarBlogCard from "./SquareBlogCard";
 import WideBlogCard from "./WideBlogCard";
 
