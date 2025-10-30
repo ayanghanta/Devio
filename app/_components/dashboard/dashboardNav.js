@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PiPlus } from "react-icons/pi";
 import Button from "../ui/buttons/Button";
 import Logout from "../ui/Logout";
 
@@ -19,10 +20,13 @@ function DashBorardNav() {
         Add Admin
       </Link>
       <Link
-        href="/admin/write"
+        href="/editor/new"
         className="ml-auto font-header text-base font-medium sm:text-xl"
       >
-        <Button type="create">&#43; Create blog</Button>
+        <Button type="create">
+          <PiPlus className="text-xl" />
+          <span>Create new blog</span>
+        </Button>
       </Link>
     </div>
   );

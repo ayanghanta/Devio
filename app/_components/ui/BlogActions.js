@@ -15,12 +15,11 @@ import {
   blogPubclishAction,
 } from "@/lib/actions/blogActions";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 function BlogActions({ blogId, isPublished }) {
   const [isPublishing, setIsPublishing] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  const isGettingBlogInfo = false; // FIXME:
 
   async function handlePublish(makePublick) {
     setIsPublishing(true);
@@ -64,14 +63,11 @@ function BlogActions({ blogId, isPublished }) {
           )}
         </Button>
       )}
-
-      <Button type="edit" onClick={handleEditBlog}>
-        {isGettingBlogInfo ? (
-          <PiSpinner className="text-xl" />
-        ) : (
+      <Link href={`/editor/${blogId}`}>
+        <Button type="edit">
           <PiNotePencil className="text-xl" />
-        )}
-      </Button>
+        </Button>
+      </Link>
 
       <Modal>
         <Modal.Open name="delete">

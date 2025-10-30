@@ -48,7 +48,7 @@ const blogSchema = new mongoose.Schema({
   },
   slug: {
     type: String,
-    unique: true,
+    unique: [true, "Each blog must have unique slug (title)"],
     lowercase: true,
   },
   likes: {

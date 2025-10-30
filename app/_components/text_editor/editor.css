@@ -62,13 +62,13 @@
 ------------------------------ */
 
 .editor-content p {
-  margin-bottom: 0.75rem;
+  margin-bottom: 6px;
 }
 
 .editor-content ul,
 .editor-content ol {
   padding-left: 1.5rem;
-  margin: 0.75rem 0;
+  margin: 6px 0;
 }
 
 .editor-content ul {
@@ -117,24 +117,40 @@
    CODE BLOCKS & INLINE CODE
 ------------------------------ */
 
-.editor-content code {
-  background-color: #f1f5f9; /* slate-100 */
-  color: #334155; /* slate-700 */
-  padding: 0.15rem 0.4rem;
+/* Inline code (single line inside paragraph) */
+.editor-content code:not(pre code) {
+  background-color: #1e293b; /* slate-800 */
+  color: #e2e8f0; /* slate-200 */
+  padding: 0.2rem 0.4rem;
   border-radius: 0.25rem;
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
 }
 
+/* Multiline code blocks */
 .editor-content pre {
-  background-color: #f8fafc; /* slate-50 */
-  color: #0f172a;
-  padding: 1rem;
+  background-color: #0f172a; /* slate-900 dark bg */
+  color: #e2e8f0; /* light text */
   border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1.25rem 0;
   overflow-x: auto;
   font-family: "JetBrains Mono", monospace;
   font-size: 0.9rem;
-  margin: 1.25rem 0;
+  line-height: 1.5;
+  white-space: pre; /* keeps indentation and spacing */
+}
+
+/* Remove extra spacing between lines and elements inside pre/code */
+.editor-content pre code {
+  display: block;
+  background: transparent; /* don't override pre's dark background */
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 /* ------------------------------
@@ -163,7 +179,7 @@
 .editor-content th,
 .editor-content td {
   border: 1px solid #e2e8f0;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 6px;
   text-align: left;
 }
 

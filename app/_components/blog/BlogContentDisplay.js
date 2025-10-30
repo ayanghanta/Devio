@@ -15,6 +15,7 @@ function BlogContentDisplay({
       if (!attribs) return;
 
       if (attribs.class === "ql-syntax") {
+        // FIXME:
         return (
           <CodeBlock
             theme={codeTheme || DEFAULT_THEME}

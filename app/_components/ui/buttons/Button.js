@@ -8,12 +8,12 @@ function Button({
   disabled = false,
 }) {
   const base =
-    "rounded-md px-2 py-1 text-sm sm:px-4 sm:py-2 text-lg disabled:cursor-not-allowed  ";
+    "rounded-md px-2 py-1 text-sm sm:px-4 sm:py-2 text-lg disabled:cursor-not-allowed  flex gap-2";
   const editbase =
-    "text-sm text-white sm:text-base transition duration-300 px-1.5 py-1 rounded-sm disabled:cursor-not-allowed ";
+    "text-sm text-white sm:text-base transition duration-300 px-1.5 py-1 rounded-sm disabled:cursor-not-allowed flex gap-2 items-center ";
   const style = {
     create:
-      "bg-gray-800 text-sm font-semibold text-gray-100 sm:text-base rounded-lg px-2 py-1 text-sm sm:px-4 sm:py-2",
+      "bg-slate-700 text-sm font-semibold text-gray-100 sm:text-base rounded-sm shadow-sm px-2 py-1 text-sm sm:px-4 sm:py-2 hover:bg-slate-800 transition flex items-center gap-2",
     primary:
       base +
       "bg-gray-800 text-sm text-gray-100 sm:text-base hover:bg-gray-700 transition duration-300",

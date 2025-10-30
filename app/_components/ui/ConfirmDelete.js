@@ -13,7 +13,7 @@ function ConfirmDelete({
         This will permanently remove the {resourceName} from your records. This
         action cannot be undone. Do you wish to continue?
       </p>
-      <div className="mt-8 space-x-3 text-right">
+      <div className="mt-8 space-x-3 flex justify-end">
         <Button type="cancel" onClick={onCloseModal}>
           Cancel
         </Button>

@@ -1,5 +1,6 @@
 import {
   PiCode,
+  PiCodeFill,
   PiLineVerticalThin,
   PiLinkSimple,
   PiListBullets,
@@ -17,7 +18,7 @@ import ImageButton from "./ImageButton";
 import YoutubeButton from "./YoutubeButton";
 import { useEditorState } from "@/app/_hooks/useEditorState";
 
-function EditorToolbar({ editor, onSetEditorContent }) {
+function EditorToolbar({ editor }) {
   const version = useEditorState(editor); // this is used to upadate the active state
 
   return (
@@ -77,6 +78,12 @@ function EditorToolbar({ editor, onSetEditorContent }) {
         <PiLineVerticalThin className="slate-300 text-base sm:text-lg" />
         {/* SECTION: 4 */}
 
+        <ToolButton
+          onClick={() => editor.chain().focus().toggleCodeBlock().run()}
+          isActive={editor.isActive("codeBlock")}
+        >
+          <PiCodeFill className="text-base xs:text-lg sm:text-xl" />
+        </ToolButton>
         <ToolButton
           onClick={() => editor.chain().focus().toggleCode().run()}
           isActive={editor.isActive("code")}
