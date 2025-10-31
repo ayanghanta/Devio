@@ -21,9 +21,6 @@ function BlogEditorHeaders({
   const [isLoading, setIsLoading] = useState(false);
 
   async function handleSaveBlog(isDarft = false) {
-    // NOTEME:
-    console.log(blogContent);
-    return;
     setIsLoading(true);
     const res = await saveBlogAction({
       blogId,
@@ -68,7 +65,7 @@ function BlogEditorHeaders({
 
         <button
           className="flex gap-2 items-center bg-green-500 rounded-sm text-white hover:bg-green-600 transition px-3 py-1.5 shadow-sm disabled:bg-green-100"
-          onClick={handleSaveBlog}
+          onClick={() => handleSaveBlog(false)}
           disabled={isLoading}
         >
           <PiRocket className="text-xl" />

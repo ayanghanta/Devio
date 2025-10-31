@@ -4,9 +4,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "devio-rail.up.railway.app",
-        port: "",
-        pathname: "/blog/**",
+        hostname: "pub-def51e1b98d44d72bdcb4a29c7cb693e.r2.dev",
+        pathname: "/**",
       },
     ],
   },

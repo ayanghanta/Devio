@@ -8,7 +8,7 @@ function Button({
   disabled = false,
 }) {
   const base =
-    "rounded-md px-2 py-1 text-sm sm:px-4 sm:py-2 text-lg disabled:cursor-not-allowed  flex gap-2";
+    "rounded-md px-2 py-1 text-sm sm:px-4 sm:py-2 text-lg disabled:cursor-not-allowed  flex gap-2 ";
   const editbase =
     "text-sm text-white sm:text-base transition duration-300 px-1.5 py-1 rounded-sm disabled:cursor-not-allowed flex gap-2 items-center ";
   const style = {
@@ -16,7 +16,7 @@ function Button({
       "bg-slate-700 text-sm font-semibold text-gray-100 sm:text-base rounded-sm shadow-sm px-2 py-1 text-sm sm:px-4 sm:py-2 hover:bg-slate-800 transition flex items-center gap-2",
     primary:
       base +
-      "bg-gray-800 text-sm text-gray-100 sm:text-base hover:bg-gray-700 transition duration-300",
+      "bg-gray-700 text-sm text-gray-100 sm:text-base hover:bg-gray-800 transition duration-300 justify-center",
     secondary:
       base +
       "bg-gray-300 text-gray-800 hover:bg-gray-400 transition duration-300",

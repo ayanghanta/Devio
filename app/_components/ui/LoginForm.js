@@ -1,23 +1,26 @@
 "use client";
 import { useState } from "react";
 import Button from "./buttons/Button";
-import { signInAction } from "@/lib/actions/authAction";
+import { signInAction, signUpAction } from "@/lib/actions/authAction";
 import toast from "react-hot-toast";
 import ButtonLoader from "./ButtonLoader";
+import { useRouter } from "next/navigation";
 
 function LoginForm() {
-  const [email, setEmail] = useState("hello@gamil.com");
-  const [password, setPassword] = useState("test12345688");
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   async function handleSubmit(e) {
     setIsLoading(true);
     e.preventDefault();
     const res = await signInAction({ email, password });
-    console.log(res);
+    // const res = await signUpAction({ email, password });
     setIsLoading(false);
-    // if (res.success === false) toast.error(res.message);
-    if (!res.success) toast.error(res.message);
+
+    if (!res.success) return toast.error(res.message);
+    router.push("/dashboard");
   }
   return (
     <form className="flex flex-col gap-6" onSubmit={handleSubmit}>

@@ -47,7 +47,11 @@ function BlogContentDisplay({
             key={`code-block-${index}`}
             language={codeLng || DEFAULT_CODE_LANGUAGE}
             style={themes[codeTheme || DEFAULT_THEME]}
-            customStyle={{ marginTop: "10px", marginBottom: "8px" }}
+            customStyle={{
+              marginTop: "10px",
+              marginBottom: "8px",
+              borderRadius: "2px",
+            }}
           >
             {codeString}
           </SyntaxHighlighter>
@@ -58,7 +62,7 @@ function BlogContentDisplay({
         return (
           <code
             key={`inline-${index}`}
-            className="font-mono text-sm leading-snug text-white bg-gray-900 p-2 rounded-sm overflow-x-auto"
+            className="text-sm leading-snug text-[#e2e8f0] bg-[#0f172a] px-1.5 py-[3px] overflow-x-auto rounded-[4px]"
           >
             {domNode.children?.[0]?.data}
           </code>

@@ -13,7 +13,9 @@ function BlogEditorPage({ blogId, blogData }) {
     blogData?.description || ""
   );
   const [showTitleDescription, setShowTitleDescription] = useState(false);
-  const [blogCoverImage, setBlogCoverImage] = useState(null);
+  const [blogCoverImage, setBlogCoverImage] = useState(
+    blogData?.blogCoverImage || ""
+  );
   const [showPreview, setShowPreview] = useState(false);
 
   if (showPreview)

@@ -13,9 +13,7 @@ function DisplayBlogPost({ blog, isPreview }) {
     codeTheme,
     codeLanguage,
   } = blog;
-  console.log(
-    isPreview ? blogCoverImage || `/blog-default.png` : blogCoverImage
-  );
+
   return (
     <>
       <h1

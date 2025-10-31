@@ -25,9 +25,14 @@ async function page() {
 
   return (
     <div className="mt-12">
-      <h1 className="mb-12 bg-gray-200 py-2 text-center font-header text-xl font-semibold text-gray-700">
-        Welcome to Your Dashboard
-      </h1>
+      <div className="mb-12 bg-gray-200 py-2">
+        <p className="text-center font-header text-lg font-semibold text-gray-700">
+          Welcome to Your Dashboard
+        </p>
+        <p className="text-center font-header text-sm text-gray-700">
+          [{session.user.email}]
+        </p>
+      </div>
       <div>
         <p className="font-header text-2xl font-semibold">
           Devhorizon Public Blogs

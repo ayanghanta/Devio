@@ -19,7 +19,7 @@ function BlogItem({ blog }) {
       {/* eslint-disable  */}
       <img
         className="max-w-36 text-center"
-        src={`${PUBLIC_URL}/${blogCoverImage}`}
+        src={blogCoverImage}
         alt={`cover image of a blog`}
       />
       <Link className="text-left hover:underline" href={`/blog/${slug}`}>
