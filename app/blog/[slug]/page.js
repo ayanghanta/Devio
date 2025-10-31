@@ -3,7 +3,7 @@ import { dbConnect } from "@/db/db";
 import Blog from "@/db/model/blogModel";
 import { notFound } from "next/navigation";
 
-export const revalidate = 86400;
+// export const revalidate = 86400;
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
