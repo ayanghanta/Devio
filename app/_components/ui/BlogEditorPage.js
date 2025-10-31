@@ -24,7 +24,7 @@ function BlogEditorPage({ blogId, blogData }) {
           content: blogContent,
           title: blogTitle,
           description: blogDescription,
-          blogCoverImage: "defaul-cover.png",
+          blogCoverImage,
         }}
       />
     );

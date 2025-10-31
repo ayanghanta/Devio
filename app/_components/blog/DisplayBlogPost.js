@@ -4,7 +4,7 @@ import BlogContentDisplay from "./BlogContentDisplay";
 import { barlow } from "@/lib/font";
 import { BLOG_COVER_HEIGHT, BLOG_COVER_WIDTH } from "@/app/_utils/constants";
 
-function DisplayBlogPost({ blog }) {
+function DisplayBlogPost({ blog, isPreview }) {
   const {
     title,
     blogCoverImage,
@@ -13,6 +13,9 @@ function DisplayBlogPost({ blog }) {
     codeTheme,
     codeLanguage,
   } = blog;
+  console.log(
+    isPreview ? blogCoverImage || `/blog-default.png` : blogCoverImage
+  );
   return (
     <>
       <h1
@@ -24,7 +27,7 @@ function DisplayBlogPost({ blog }) {
 
       <Image
         className="mx-auto mb-12 max-w-[90%] rounded-sm"
-        src={`/blogs/${blogCoverImage}`}
+        src={isPreview ? blogCoverImage || `/blog-default.png` : blogCoverImage}
         alt={title || "Blog Cover"}
         width={BLOG_COVER_WIDTH}
         height={BLOG_COVER_HEIGHT}

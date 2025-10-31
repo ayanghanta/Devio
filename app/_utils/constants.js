@@ -1,5 +1,16 @@
-export const DEFAULT_THEME = "github";
+// CODE THEME
+export const DEFAULT_THEME = "monokai";
 export const DEFAULT_CODE_LANGUAGE = "javascript";
+export const CODE_THEMES = [
+  "atomOneDark",
+  "monokai",
+  "vs",
+  "isblEditorLight",
+  "anOldHope",
+  "monokaiSublime",
+  "nightOwl",
+  "github",
+];
 
 // PASSWORDS
 export const MIN_PASSWORD_LENGTH = 10;
