@@ -4,16 +4,17 @@ import { barlow } from "@/lib/font";
 
 import Link from "next/link";
 import Image from "next/image";
+import { BLOG_COVER_HEIGHT, BLOG_COVER_WIDTH } from "@/app/_utils/constants";
 
 function WideBlogCard({ blog = {} }) {
   const { title, description, blogCoverImage, publishedAt, slug } = blog;
   return (
     <div className="mb-12 items-start rounded border border-gray-400 p-3 transition duration-300 hover:shadow-md sm:flex sm:gap-6">
       <Image
-        src={`/blogs/${blogCoverImage}`}
+        src={blogCoverImage}
         alt={title || "Blog Cover"}
-        width={5184}
-        height={2916}
+        width={BLOG_COVER_WIDTH}
+        height={BLOG_COVER_HEIGHT}
         className="rounded sm:w-6/12"
       />
 

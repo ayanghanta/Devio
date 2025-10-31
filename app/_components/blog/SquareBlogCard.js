@@ -3,6 +3,7 @@ import CollapsText from "@/app/_utils/CollapsText";
 import { formatDate } from "@/app/_utils/formatDate";
 import Image from "next/image";
 import { barlow } from "@/lib/font";
+import { BLOG_COVER_HEIGHT, BLOG_COVER_WIDTH } from "@/app/_utils/constants";
 
 function SquarBlogCard({ blog = {} }) {
   const { title, description, blogCoverImage, publishedAt, slug } = blog;
@@ -10,10 +11,10 @@ function SquarBlogCard({ blog = {} }) {
   return (
     <div className="rounded border border-gray-200 bg-gray-50 p-3 transition duration-300 hover:shadow-md">
       <Image
-        src={`/blogs/${blogCoverImage}`}
+        src={blogCoverImage}
         alt={title || "Blog Cover"}
-        width={5184}
-        height={2916}
+        width={BLOG_COVER_WIDTH}
+        height={BLOG_COVER_HEIGHT}
         className="rounded"
       />
       <div>
