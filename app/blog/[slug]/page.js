@@ -44,17 +44,17 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export async function generateStaticParams() {
-  await dbConnect();
-  const blogs = await Blog.find({ isPublished: true }, "slug");
+// export async function generateStaticParams() {
+//   await dbConnect();
+//   const blogs = await Blog.find({ isPublished: true }, "slug");
 
-  const allBlogSlugs = blogs.map((blog) => {
-    return {
-      slug: blog.slug,
-    };
-  });
-  return allBlogSlugs;
-}
+//   const allBlogSlugs = blogs.map((blog) => {
+//     return {
+//       slug: blog.slug,
+//     };
+//   });
+//   return allBlogSlugs;
+// }
 
 async function page({ params }) {
   const { slug } = params;
