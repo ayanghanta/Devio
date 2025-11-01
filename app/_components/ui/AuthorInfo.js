@@ -4,7 +4,7 @@ import Link from "next/link";
 import LikeAndShear from "./LikeAndShear";
 import { Suspense } from "react";
 
-function AuthorInfo({ readTime = 5, blogPublishDate }) {
+function AuthorInfo({ readTime = 5, blogPublishDate, blogId }) {
   return (
     <div className="mb-12">
       <div className="ml-4 flex items-center gap-4 sm:ml-10">
@@ -24,7 +24,7 @@ function AuthorInfo({ readTime = 5, blogPublishDate }) {
           </p>
         </div>
         <Suspense fallback={<p>Loading...</p>}>
-          <LikeAndShear />
+          <LikeAndShear blogId={blogId.toString()} />
         </Suspense>
       </div>
     </div>

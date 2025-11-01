@@ -12,6 +12,7 @@ function DisplayBlogPost({ blog, isPreview }) {
     publishedAt,
     codeTheme,
     codeLanguage,
+    _id: blogId,
   } = blog;
 
   return (
@@ -21,7 +22,7 @@ function DisplayBlogPost({ blog, isPreview }) {
       >
         {title}
       </h1>
-      <AuthorInfo blogPublishDate={publishedAt || new Date()} />
+      <AuthorInfo blogPublishDate={publishedAt || new Date()} blogId={blogId} />
 
       <Image
         className="mx-auto mb-12 max-w-[90%] rounded-sm"

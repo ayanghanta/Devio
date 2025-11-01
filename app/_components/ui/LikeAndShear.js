@@ -2,17 +2,30 @@
 
 import { PiHeart, PiHeartFill } from "react-icons/pi";
 import ShearButton from "../blog/ShearButton";
-import { useState } from "react";
+import { useLocalStorage } from "@/app/_hooks/useLocalStorage";
+import { likeBlogAction } from "@/lib/actions/blogActions";
 
-function LikeAndShear() {
-  const [like, setLike] = useState(false);
+function LikeAndShear({ blogId }) {
+  const { localStorageData, handleUpdateLocalStorage } = useLocalStorage();
 
-  function handleLike() {
-    setLike((like) => !like);
+  const isAlreadyLikedBlog = localStorageData?.likes?.includes(blogId);
+
+  async function handleLike() {
+    const prevLikes = localStorageData?.likes ?? [];
+    const isAlreadyLiked = prevLikes.includes(blogId);
+
+    const updatedLikes = isAlreadyLiked
+      ? prevLikes.filter((id) => id !== blogId)
+      : [...prevLikes, blogId];
+
+    handleUpdateLocalStorage("likes", updatedLikes);
+
+    await likeBlogAction({ blogId, isUnLike: isAlreadyLiked });
   }
+
   return (
     <div className="ml-auto mr-2 flex items-center gap-2 sm:mr-12 sm:gap-4 md:mr-16">
-      {like ? (
+      {isAlreadyLikedBlog ? (
         <PiHeartFill
           className="cursor-pointer fill-rose-500 p-1.5 text-3xl text-gray-500 sm:text-4xl"
           onClick={handleLike}
