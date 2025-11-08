@@ -13,20 +13,13 @@ async function Header() {
 
         <ul className="flex gap-4 text-base font-medium sm:gap-8 sm:text-xl">
           <li>
-            <Link href="/about">About me</Link>
-          </li>
-          <li>
             <Link href="/blogs">Blogs</Link>
           </li>
+          <li>
+            <Link href="/about">About me</Link>
+          </li>
         </ul>
-        {/*  */}
 
-        {/* <div className="space-x-3">
-          <Link href="/admin/dashboard">DashBoard</Link>
-          <Link href="/login">
-            <Button type="primary">Login</Button>
-          </Link>
-        </div> */}
         <div className="hidden sm:mr-12 sm:block md:mr-24"></div>
       </nav>
     </header>
