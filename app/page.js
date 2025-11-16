@@ -8,7 +8,7 @@ import ApiFeatures from "@/lib/apiFeature";
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "Devio",
+  title: "Indev",
   description:
     "Hey, I’m ayan sharing my coding journey on this website, new tech I learn, projects I build, and lessons I pick up along the way.",
 };

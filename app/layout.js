@@ -10,9 +10,9 @@ const rubic = Rubik({
 });
 
 export const metadata = {
-  title: "Devio",
+  title: "Indev",
   description:
-    "Insights, stories, and reflections on my code blogs, creativity, and growth at Devio. A personal space for sharing meaningful content, and fun .",
+    "Insights, stories, and reflections on my code blogs, creativity, and growth at Indev. A personal space for sharing meaningful content, and fun .",
 };
 
 export default function RootLayout({ children }) {

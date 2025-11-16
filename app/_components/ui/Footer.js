@@ -7,7 +7,7 @@ function Footer() {
         <p className="text-sm text-gray-500">
           &copy; {new Date().getFullYear()}{" "}
           <Link href="/" className="font-semibold text-gray-300">
-            Devio
+            Indev
           </Link>
           — All rights reserved.
         </p>

@@ -10,16 +10,16 @@ function Hero() {
         <h1
           className={`${barlow.className} mb-5 font-header text-2xl font-medium sm:text-4xl`}
         >
-          Hello, welcome to Devio.
+          Making Things That Make Me Think.
         </h1>
         <p className="text-xs font-normal sm:text-base">
-          Where ideas take shape in code, and every keystroke is a step toward
-          creating something extraordinary...
+          Sharing builds, experiments, and ideas that challenge my skills, spark
+          curiosity, and push my understanding of how tech actually works...
         </p>
       </div>
       <Image
         src={heroImg}
-        alt="hero image of devio"
+        alt="hero image of Indev"
         fill
         placeholder="blur"
         className="object-cover object-center"

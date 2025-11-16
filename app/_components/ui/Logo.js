@@ -9,8 +9,8 @@ function Logo() {
           width={2000}
           height={585}
           src="/logo.png"
-          alt="logo of devio blog website"
-          className="w-[72px] sm:w-32"
+          alt="logo of Indev blog website"
+          className="w-[36px] sm:w-16"
         />
       </Link>
     </div>

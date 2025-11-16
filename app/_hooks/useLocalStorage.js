@@ -4,12 +4,12 @@ export function useLocalStorage() {
   const [localStorageData, setLocalStorageData] = useState({});
 
   useEffect(function () {
-    setLocalStorageData(JSON.parse(localStorage.getItem("devio") || "{}"));
+    setLocalStorageData(JSON.parse(localStorage.getItem("Indev") || "{}"));
   }, []);
 
   useEffect(
     function () {
-      localStorage.setItem("devio", JSON.stringify(localStorageData));
+      localStorage.setItem("Indev", JSON.stringify(localStorageData));
     },
     [localStorageData]
   );
