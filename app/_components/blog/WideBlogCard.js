@@ -1,4 +1,4 @@
-import { formatDate } from "@/app/_utils/formatDate";
+import { formatDate } from "@/app/_utils/helper";
 import CollapsText from "@/app/_utils/CollapsText";
 import { barlow } from "@/lib/font";
 

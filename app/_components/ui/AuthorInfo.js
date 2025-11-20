@@ -1,4 +1,4 @@
-import { formatDate } from "@/app/_utils/formatDate";
+import { formatDate } from "@/app/_utils/helper";
 import Image from "next/image";
 import Link from "next/link";
 import LikeAndShear from "./LikeAndShear";
@@ -24,7 +24,7 @@ function AuthorInfo({ readTime = 5, blogPublishDate, blogId }) {
           </p>
         </div>
         <Suspense fallback={<p>Loading...</p>}>
-          <LikeAndShear blogId={blogId.toString()} />
+          <LikeAndShear blogId={blogId?.toString()} />
         </Suspense>
       </div>
     </div>

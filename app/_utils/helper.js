@@ -11,3 +11,6 @@ export function formatDate(date, monthType = 'short') {
 
   return formatedDate;
 }
+
+export const delay = (seconds) =>
+  new Promise((resolve) => setTimeout(resolve, seconds * 1000));

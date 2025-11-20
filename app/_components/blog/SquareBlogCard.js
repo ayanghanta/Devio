@@ -1,6 +1,6 @@
 import Link from "next/link";
 import CollapsText from "@/app/_utils/CollapsText";
-import { formatDate } from "@/app/_utils/formatDate";
+import { formatDate } from "@/app/_utils/helper";
 import Image from "next/image";
 import { barlow } from "@/lib/font";
 import { BLOG_COVER_HEIGHT, BLOG_COVER_WIDTH } from "@/app/_utils/constants";

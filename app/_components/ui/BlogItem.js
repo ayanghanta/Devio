@@ -1,7 +1,7 @@
 import Link from "next/link";
 import BlogActions from "./BlogActions";
 import { PUBLIC_URL } from "@/app/_utils/constants";
-import { formatDate } from "@/app/_utils/formatDate";
+import { formatDate } from "@/app/_utils/helper";
 
 function BlogItem({ blog }) {
   const {
