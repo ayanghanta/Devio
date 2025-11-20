@@ -28,7 +28,7 @@ function BlogEditorPage({ blogId, blogData }) {
       temperature,
     });
 
-    if (!success) toast.error(message);
+    if (!success) return toast.error(message);
 
     setBlogTitle(blogData.title);
     setBlogContent(blogData.content);
