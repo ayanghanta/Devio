@@ -4,8 +4,8 @@ import WideBlogCard from "../_components/blog/WideBlogCard";
 
 import { dbConnect } from "@/db/db";
 import Blog from "@/db/model/blogModel";
-import { barlow } from "@/lib/font";
-import ApiFeatures from "@/lib/apiFeature";
+import { barlow } from "@/app/_lib/font";
+import ApiFeatures from "@/app/_lib/apiFeature";
 
 export const metadata = {
   title: "All blogs",

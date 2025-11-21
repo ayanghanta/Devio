@@ -1,6 +1,6 @@
 "use client";
 
-import { saveBlogAction } from "@/lib/actions/blogActions";
+import { saveBlogAction } from "@/app/_lib/actions/blogActions";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import {
@@ -84,7 +84,7 @@ function BlogEditorHeaders({
         </div>
       </div>
       <Modal.Window windowName="aiPrompt">
-        <AiPromptWindow onGenerate={onAiWrite}  />
+        <AiPromptWindow onGenerate={onAiWrite} />
       </Modal.Window>
     </Modal>
   );

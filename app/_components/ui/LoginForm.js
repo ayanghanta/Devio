@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Button from "./buttons/Button";
-import { signInAction, signUpAction } from "@/lib/actions/authAction";
+import { signInAction, signUpAction } from "@/app/_lib/actions/authAction";
 import toast from "react-hot-toast";
 import ButtonLoader from "./ButtonLoader";
 import { useRouter } from "next/navigation";

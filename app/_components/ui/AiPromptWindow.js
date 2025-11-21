@@ -106,7 +106,7 @@ function AiPromptWindow({ onGenerate, onCloseModal }) {
           >
             {isLoading ? (
               <>
-                <PiSpinner className="w-5 h-5 mr-2" />
+                <PiSpinner className="w-5 h-5 mr-2 animate-spin" />
                 Generateing
               </>
             ) : (

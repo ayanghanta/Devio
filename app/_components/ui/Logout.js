@@ -1,7 +1,7 @@
 "use client";
 import { PiSignOut } from "react-icons/pi";
 import Button from "./buttons/Button";
-import { authClient } from "@/lib/authClinet";
+import { authClient } from "@/app/_lib/authClinet";
 import { useRouter } from "next/navigation";
 
 function Logout() {

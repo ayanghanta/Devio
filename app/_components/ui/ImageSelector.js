@@ -1,4 +1,4 @@
-import { uploadBlogImageAction } from "@/lib/actions/imageUploadAction";
+import { uploadBlogImageAction } from "@/app/_lib/actions/imageUploadAction";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { PiImageSquareLight, PiUploadSimpleLight } from "react-icons/pi";

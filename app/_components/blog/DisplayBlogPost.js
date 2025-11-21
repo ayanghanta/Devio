@@ -1,7 +1,7 @@
 import Image from "next/image";
 import AuthorInfo from "../ui/AuthorInfo";
 import BlogContentDisplay from "./BlogContentDisplay";
-import { barlow } from "@/lib/font";
+import { barlow } from "@/app/_lib/font";
 import { BLOG_COVER_HEIGHT, BLOG_COVER_WIDTH } from "@/app/_utils/constants";
 
 function DisplayBlogPost({ blog, isPreview }) {

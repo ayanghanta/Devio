@@ -1,4 +1,4 @@
-import { barlow } from "@/lib/font";
+import { barlow } from "@/app/_lib/font";
 import Image from "next/image";
 
 import heroImg from "@/public/hero-bg2.jpg";

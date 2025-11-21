@@ -1,6 +1,6 @@
 import { dbConnect } from "@/db/db";
 import Blog from "@/db/model/blogModel";
-import ApiFeatures from "@/lib/apiFeature";
+import ApiFeatures from "@/app/_lib/apiFeature";
 
 export async function GET(req, { params }) {
   try {

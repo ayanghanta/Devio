@@ -5,7 +5,7 @@ import TextEditor from "../text_editor/TextEditor";
 import BlogEditorHeaders from "./BlogEditorHeaders";
 import Preview from "./Preview";
 import BlogMetaData from "./BlogMetaData";
-import { writeWithAi } from "@/lib/actions/aiWritingAction";
+import { writeWithAi } from "@/app/_lib/actions/aiWritingAction";
 import toast from "react-hot-toast";
 import { delay } from "@/app/_utils/helper";
 

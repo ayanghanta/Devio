@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { barlow } from "@/lib/font";
+import { barlow } from "@/app/_lib/font";
 import { BLOG_COVER_HEIGHT, BLOG_COVER_WIDTH } from "@/app/_utils/constants";
 
 function SmallBlogCard({ blog }) {

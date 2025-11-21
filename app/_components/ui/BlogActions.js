@@ -13,7 +13,7 @@ import { useState } from "react";
 import {
   blogDeleteAction,
   blogPubclishAction,
-} from "@/lib/actions/blogActions";
+} from "@/app/_lib/actions/blogActions";
 import toast from "react-hot-toast";
 import Link from "next/link";
 

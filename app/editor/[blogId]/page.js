@@ -1,5 +1,5 @@
 import BlogEditorPage from "@/app/_components/ui/BlogEditorPage";
-import { auth } from "@/lib/auth";
+import { auth } from "@/app/_lib/auth";
 import { headers } from "next/headers";
 import { Types } from "mongoose";
 import { dbConnect } from "@/db/db";

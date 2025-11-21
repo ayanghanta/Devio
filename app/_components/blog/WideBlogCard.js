@@ -1,6 +1,6 @@
 import { formatDate } from "@/app/_utils/helper";
 import CollapsText from "@/app/_utils/CollapsText";
-import { barlow } from "@/lib/font";
+import { barlow } from "@/app/_lib/font";
 
 import Link from "next/link";
 import Image from "next/image";

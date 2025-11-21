@@ -3,7 +3,7 @@
 import { PiHeart, PiHeartFill } from "react-icons/pi";
 import ShearButton from "../blog/ShearButton";
 import { useLocalStorage } from "@/app/_hooks/useLocalStorage";
-import { likeBlogAction } from "@/lib/actions/blogActions";
+import { likeBlogAction } from "@/app/_lib/actions/blogActions";
 
 function LikeAndShear({ blogId }) {
   const { localStorageData, handleUpdateLocalStorage } = useLocalStorage();
